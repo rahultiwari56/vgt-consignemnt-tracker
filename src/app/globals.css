@@ -1,33 +1,386 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.cover-div {
+  position: relative; 
+  height: 100vh;
+  text-align: center;
+  width: 100%;
+  overflow: scroll; 
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.cover-div::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./images/supply-chain-representation-still-life.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  filter: blur(3px); /* Apply blur effect */
+  z-index: -1; /* Ensure it stays behind any content */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.top-div{
+display: flex;
+margin-top: 50px;
+justify-content: center;
+}
+
+
+.logo{
+  margin: 30px;
+  margin-top: 20px;
+  border: 2px solid blue;
+  border-radius: 10px;
+  font-size: 50px;
+}
+
+.name-content{
+font-size: 35px;
+margin-bottom: 20px;
+}
+
+.add-content{
+  font-size: 20px;
+}
+
+.place-order{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.place-order-left{
+  width: 100%;
+  max-width: max(30%,500px);
+}
+
+.place-order-left .title{
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.place-order-left input{
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  outline-color: tomato;
+
+}
+.place-order-left .multi-fields{
+  display: flex;
+  gap: 10px;
+}
+
+.rape-flex{
+  display: flex;
+}
+
+.formDataHandle{
+  display: flex;
+  flex-direction:column;
+}
+
+.formInnerDataHandler{
+  display: flex;
+   padding: 80px;
+   padding-right:0;
+   padding-bottom:0;
+}
+
+.form-section1{
+  margin: 2px;
+}
+
+.overAllFontSizeText{
+  font-size: 12px;
+  text-align: center;
+}
+
+.overAllFontSize{
+  font-size: 12px;
+}
+
+.overAllInputBox{
+  height: 15px;
+  width: 100px;
+}
+
+.overAllInputBox2{
+  height: 15px;
+  width: 90px;
+}
+
+.overAllTextBox{
+  width: 300px;
+  height: auto;
+  min-height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 15px;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.overAllTextBox2{
+  width: 800px;
+  height: 50px;
+  min-height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 15px;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.overAllTextBox3{
+  width: 90px;
+  height: 150px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: none;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.overAllTextBox4{
+
+              width: 180px;
+              height: 50px;
+              min-height: 30px;
+              padding: 5px;
+              font-size: 14px;
+              border: 1px solid #ccc;
+              resize: none;
+              overflow-wrap: break-word;
+              box-sizing: border-box;
+
+}
+
+.overAllTextBox5{
+  
+  width: 500px;
+  height: 150px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  resize: none;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.overAllHr{
+  margin-bottom: 10px;
+}
+
+.overAllAreaSection{
+  display: flex;
+  margin: 1px;
+}
+
+.h1Inner{
+  font-size: 14px;
+  margin-left: 0;
+
+}
+
+.demurrage-section{
+  height: 70px;
+  width:300px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+
+
+.note-section{
+  margin-top: 2px;
+  height: 160px;
+  width:300px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.CONSIGNEE-section{
+  margin-top: 2px;
+  height: 70px;
+  width:300px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.insurance-section{
+  margin-top: 2px;
+  height: 160px;
+  width:300px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.caution-section{
+    margin-top: 2px;
+    height: 70px;
+    width:300px;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+  
+}
+
+.caution-address-section{
+  margin-top: 2px;
+  height: 160px;
+  width:300px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.pan-section{
+margin-left: 5px;
+padding-top: 80px;
+}
+
+.table-container {
+  padding: 0px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 0px;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 65%;
+  margin-left: 80px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+
+/* Hide the right border for data cells in Fields 1, 2, and 4 */
+.no-right-border {
+  border-right: none;
+}
+
+/* Hide bottom-right border of Field 1, 2, and 4 in the header */
+.no-bottom-right-border {
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Hide top-right border of the empty cells below Field 1, 2, and 4 */
+.no-top-right-border {
+  border-right: none;
+  border-top: none;
+}
+
+.pan-section-box{
+  font-size: 20px;
+}
+
+.endValueSignSection{
+  display: flex;
+  font-size: 10px;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px;
+}
+
+.valueInputBox{
+  height: 20px;
+  width: 100px;
+}
+
+
+/* ViewReceipts.css */
+
+.receipts-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.receipts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.receipt-form {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.receipt-id {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.form-group p {
+  margin: 0;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
