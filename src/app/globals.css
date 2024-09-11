@@ -1,3 +1,5 @@
+
+
 *{
   padding: 0;
   margin: 0;
@@ -106,6 +108,7 @@ margin-bottom: 20px;
 
 .overAllFontSizeText{
   font-size: 12px;
+  margin-top:10px ;
   text-align: center;
 }
 
@@ -114,39 +117,86 @@ margin-bottom: 20px;
 }
 
 .overAllInputBox{
-  height: 15px;
-  width: 100px;
+  border: 2px solid lightblue;
+  width: 90px;
+  margin-left: 5px;
+  height: 1.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.overAllInputBox:hover,
+.overAllInputBox:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
 }
 
 .overAllInputBox2{
-  height: 15px;
+  border: 2px solid lightblue;
   width: 90px;
+  margin-left: 5px;
+  height: 1.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.overAllInputBox2:hover,
+.overAllInputBox2:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
 }
 
 .overAllTextBox{
+  border: 2px solid lightblue;
   width: 300px;
+  margin-left: 5px;
   height: auto;
-  min-height: 30px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  resize: none;
-  margin-bottom: 15px;
+  min-height: 50px;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
   overflow-wrap: break-word;
   box-sizing: border-box;
 }
+.overAllTextBox:hover,
+.overAllTextBox:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
 
 .overAllTextBox2{
+  border: 2px solid lightblue;
   width: 800px;
-  height: 50px;
-  min-height: 30px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  resize: none;
-  margin-bottom: 15px;
+  margin-left: 5px;
+  height: auto;
+  min-height: 50px;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
   overflow-wrap: break-word;
   box-sizing: border-box;
+}
+.overAllTextBox2:hover,
+.overAllTextBox2:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
 }
 
 .overAllTextBox3{
@@ -161,16 +211,25 @@ margin-bottom: 20px;
 
 .overAllTextBox4{
 
-              width: 180px;
-              height: 50px;
-              min-height: 30px;
-              padding: 5px;
-              font-size: 14px;
-              border: 1px solid #ccc;
-              resize: none;
-              overflow-wrap: break-word;
-              box-sizing: border-box;
-
+  border: 2px solid lightblue;
+  width: 170px;
+  margin-left: 5px;
+  height: auto;
+  min-height: 50px;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+.overAllTextBox4:hover,
+.overAllTextBox4:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
 }
 
 .overAllTextBox5{
@@ -182,6 +241,25 @@ margin-bottom: 20px;
   resize: none;
   overflow-wrap: break-word;
   box-sizing: border-box;
+}
+
+.overAllInputBox2{
+  border: 2px solid lightblue;
+  width: 90px;
+  margin-left: 5px;
+  height: 1.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.overAllInputBox2:hover,
+.overAllInputBox2:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
 }
 
 .overAllHr{
@@ -200,7 +278,7 @@ margin-bottom: 20px;
 }
 
 .demurrage-section{
-  height: 70px;
+  height: 90px;
   width:300px;
   text-align: left;
   border: 1px solid black;
@@ -222,7 +300,7 @@ margin-bottom: 20px;
 
 .CONSIGNEE-section{
   margin-top: 2px;
-  height: 70px;
+  height: 90px;
   width:300px;
   text-align: left;
   border: 1px solid black;
@@ -242,7 +320,7 @@ margin-bottom: 20px;
 
 .caution-section{
     margin-top: 2px;
-    height: 70px;
+    height: 90px;
     width:300px;
     text-align: left;
     border: 1px solid black;
@@ -384,3 +462,4 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+

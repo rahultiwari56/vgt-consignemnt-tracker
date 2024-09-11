@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import Button from '@mui/material/Button';
 
 const ViewReceipts = () => {
     const [receipts, setReceipts] = useState<any[]>([]);
@@ -176,7 +177,8 @@ const ViewReceipts = () => {
                                                                             name='date'
                                                                             value={isEditing === receipt._id ? updatedReceipt.date : receipt.date}
                                                                             readOnly={isEditing !== receipt._id}
-                                                                            style={{ height: '15px', width: '90px' }}
+                                                                            style={{ height: '15px', width: '80px' }}
+                                                                            className='overAllInputBox2'
                                                                             required
                                                                             onChange={handleChange}
 
@@ -190,6 +192,7 @@ const ViewReceipts = () => {
                                                                             value={isEditing === receipt._id ? updatedReceipt.amount : receipt.amount}
                                                                             readOnly={isEditing !== receipt._id}
                                                                             style={{ height: '15px', width: '90px' }}
+                                                                            className='overAllInputBox2'
                                                                             required
                                                                             onChange={handleChange}
 
@@ -201,6 +204,8 @@ const ViewReceipts = () => {
                                                                             value={isEditing === receipt._id ? updatedReceipt.risk : receipt.risk}
                                                                             readOnly={isEditing !== receipt._id}
                                                                             style={{ height: '15px', width: '90px' }}
+                                                                            className='overAllInputBox2'
+
                                                                             required
                                                                             onChange={handleChange}
 
@@ -243,6 +248,8 @@ const ViewReceipts = () => {
                                                                         name='uniqueNumber'
                                                                         value={isEditing === receipt._id ? updatedReceipt.uniqueNumber : receipt.uniqueNumber}
                                                                         readOnly={isEditing !== receipt._id}
+                                                                        className='overAllInputBox2'
+
                                                                         style={{ height: '15px', width: '90px' }}
                                                                         required
                                                                         onChange={handleChange}
@@ -255,6 +262,8 @@ const ViewReceipts = () => {
 
                                                                         value={isEditing === receipt._id ? updatedReceipt.uniqueDate : receipt.uniqueDate}
                                                                         readOnly={isEditing !== receipt._id}
+                                                                        className='overAllInputBox2'
+
                                                                         style={{ height: '15px', width: '90px' }}
                                                                         required
                                                                         onChange={handleChange}
@@ -442,6 +451,8 @@ const ViewReceipts = () => {
                                                             name='ewayBillNo'
                                                             value={isEditing === receipt._id ? updatedReceipt.ewayBillNo : receipt.ewayBillNo}
                                                             readOnly={isEditing !== receipt._id}
+                                                            className='overAllInputBox2'
+
                                                             style={{ height: '20px', width: '100px' }}
                                                             required
                                                             onChange={handleChange}
@@ -453,6 +464,8 @@ const ViewReceipts = () => {
                                                             name='validUpto'
                                                             value={isEditing === receipt._id ? updatedReceipt.validUpto : receipt.validUpto}
                                                             readOnly={isEditing !== receipt._id}
+                                                            className='overAllInputBox2'
+
                                                             style={{ height: '20px', width: '130px' }}
                                                             required
                                                             onChange={handleChange}
@@ -537,6 +550,8 @@ const ViewReceipts = () => {
                                                     name='value'
                                                     value={isEditing === receipt._id ? updatedReceipt.value : receipt.value}
                                                     readOnly={isEditing !== receipt._id}
+                                                    className='overAllInputBox2'
+
                                                     style={{ height: '20px', width: '100px' }}
                                                     required
                                                     onChange={handleChange}
@@ -548,13 +563,15 @@ const ViewReceipts = () => {
                                             </div>
                                             
                                         </div>
-<div>
- {isEditing === receipt._id ? (
-        <button type='button' onClick={() => handleUpdate(receipt._id)}>Update</button>
-    ) : (
-        <button type='button' onClick={() => handleEdit(receipt)}>Edit</button>
-    )}
+                                        <div className="flex space-x-4">
+  {isEditing === receipt._id ? (
+     <Button variant="outlined" onClick={() => handleUpdate(receipt)}>update</Button>
+  ) : (
+    <Button variant="outlined" onClick={() => handleEdit(receipt)}>Edit</Button>
+  )}
 </div>
+
+
                                     </form>
                             
                         </div>

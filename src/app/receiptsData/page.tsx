@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 type Receipt = {
+  filter(arg0: (receipt: any) => any): unknown;
   _id: string;
   date: string;
   amount: number;
@@ -41,7 +42,7 @@ const ViewReceipts = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState<Receipt[]>([]); // Correct state type for search results is Receipt[]
+  const [searchResults, setSearchResults] = useState<any>([]); // Correct state type for search results is Receipt[]
 
   useEffect(() => {
     const fetchReceipts = async () => {
@@ -50,9 +51,7 @@ const ViewReceipts = () => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-        const data = await res.json();
-        //setReceipts(data.success ? data.data : []);
-        //console.log(data)
+        const data = await res.json()
         const temp = []
         temp.push(data.data)
         setReceipts(data.success ? temp : []);
@@ -73,12 +72,15 @@ const ViewReceipts = () => {
 
   const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+  
     if (receipts) {
-      const filteredReceipts = receipts.filter((receipt) => {
-        return receipt._id.includes(searchTerm); // Use _id now safely
-      });
-      setSearchResults(filteredReceipts); // Update search results state
+      if (searchTerm.trim() === '') {
+        setSearchResults([]); 
+      } else {
+        const filteredReceipts = receipts[0]?.filter((receipt:any) => receipt._id.includes(searchTerm));
+        console.log(79,filteredReceipts)
+        setSearchResults(filteredReceipts); 
+      }
     } else {
       console.error("Receipts is null or undefined");
     }
@@ -108,8 +110,7 @@ const ViewReceipts = () => {
       </form>
       {searchResults.length > 0 ? (
         <div className='receipts-list'>
-          {searchResults.map((receipt) => (
-            // render receipt component here
+          {searchResults.map((receipt:any) => (
             <div key={receipt._id} className='receipt-form'>
            <h3 className='receipt-id'>Receipt id :{receipt._id}</h3>
            <div className='top-div'>
@@ -204,9 +205,9 @@ const ViewReceipts = () => {
                                name='date'
                                value={receipt.date}
                                readOnly
-                               style={{ height: '15px', width: '90px' }}
+                               className='overAllInputBox2'
+                               style={{ height: '1.5em', width: '80px' }}
                                required
-
                              />
                            </h1>
                          </div>
@@ -216,6 +217,7 @@ const ViewReceipts = () => {
                                name='amount'
                                value={receipt.amount}
                                readOnly
+                               className='overAllInputBox2'
                                style={{ height: '15px', width: '90px' }}
                                required
 
@@ -225,6 +227,7 @@ const ViewReceipts = () => {
                              <input
                                name='risk'
                                value={receipt.risk}
+                               className='overAllInputBox2'
                                readOnly
                                style={{ height: '15px', width: '90px' }}
                                required
@@ -266,6 +269,7 @@ const ViewReceipts = () => {
                            <input
                              name='uniqueNumber'
                              value={receipt.uniqueNumber}
+                             className='overAllInputBox2'
                              readOnly
                              style={{ height: '15px', width: '90px' }}
                              required
@@ -275,7 +279,7 @@ const ViewReceipts = () => {
                          <h1 className='overAllFontSize' >Date.
                            <input
                              name='uniqueDate'
-
+                             className='overAllInputBox2'
                              value={receipt.uniqueDate}
                              readOnly
                              style={{ height: '15px', width: '90px' }}
@@ -450,6 +454,7 @@ const ViewReceipts = () => {
                      <input
                        name='ewayBillNo'
                        value={receipt.ewayBillNo}
+                       className='overAllInputBox2'
                        readOnly
                        style={{ height: '20px', width: '100px' }}
                        required
@@ -460,6 +465,7 @@ const ViewReceipts = () => {
                      <input
                        name='validUpto'
                        value={receipt.validUpto}
+                       className='overAllInputBox2'
                        readOnly
                        style={{ height: '20px', width: '130px' }}
                        required
@@ -538,6 +544,8 @@ const ViewReceipts = () => {
                  <h1 style={{ display: 'flex' }}>Value  <input
                    name='value'
                    value={receipt.value}
+                   className='overAllInputBox2'
+
                    readOnly
                    style={{ height: '20px', width: '100px' }}
                    required
