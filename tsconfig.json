@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/models/formData.js", "src/lib/dbconnect.js", "src/app/pages/api/form.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/models/formData.js", "src/lib/mongodb.js", "src/app/pages/api/form.js", "src/components/userInfo/userInfo.jsx", "src/app/Providers.js"],
   "exclude": ["node_modules"]
 }

@@ -52,6 +52,10 @@ const FormComponent = () => {
   };
 
   useEffect(() => {
+     const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      setFormData(JSON.parse(savedData));
+    }
     const fetchUniqueId = async () => {
       try {
         const response = await fetch("/api/uniqueNumber");
@@ -63,6 +67,11 @@ const FormComponent = () => {
     };
     fetchUniqueId();
   }, []);
+
+  useEffect(() => {
+    // Save form data to localStorage on every change
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

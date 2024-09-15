@@ -1,4 +1,5 @@
 "use client"
+import Loader from '@/components/loader/loader';
 import React, { useState, useEffect } from 'react';
 type Receipt = {
   filter(arg0: (receipt: any) => any): unknown;
@@ -86,7 +87,7 @@ const ViewReceipts = () => {
     }
   };
   if (loading) {
-    return <p>Loading...</p>;
+    return <div><Loader/></div>;
   }
 
   if (error) {

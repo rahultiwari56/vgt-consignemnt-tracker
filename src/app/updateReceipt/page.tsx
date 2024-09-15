@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import Loader from '@/components/loader/loader';
 
 const ViewReceipts = () => {
     const [receipts, setReceipts] = useState<any[]>([]);
@@ -97,7 +98,7 @@ const ViewReceipts = () => {
       }
     };
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p><Loader/></p>;
   
     if (error) return <p>{error}</p>;
   return (
