@@ -1,0 +1,115 @@
+/* From Uiverse.io by Smit-Prajapati */
+.containerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  height: 100vh;
+  background-blend-mode: screen;
+  width: 100%;
+}
+.container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px 35px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 20px;
+  width: 27%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 37px;
+  color: black;
+}
+.desc {
+  font-size: 18px;
+  color: #646464;
+  width: 80%;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form .input {
+  background: white;
+  border: none;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 15px 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.form .input::-moz-placeholder {
+  color: rgb(110, 110, 110);
+  font-weight: 500;
+}
+
+.form .input::placeholder {
+  color: rgb(110, 110, 110);
+  font-weight: 500;
+}
+
+.form .input:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.form .forgot-password {
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.bottomText {
+  color: #646464;
+}
+.form .forgot-password a {
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: none;
+}
+
+.form .loginButton {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: #fec887;
+  color: black;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 12px;
+  font-size: 18px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form .login-button:hover {
+  transform: scale(1.03);
+}
+
+.form .login-button:active {
+  transform: scale(0.95);
+}
+
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: #0099ff;
+  font-size: 9px;
+}

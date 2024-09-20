@@ -1,4 +1,4 @@
-import mongoose from "mongoose";  
+import mongoose from "mongoose";
 import User from "@/models/user";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -38,7 +38,7 @@ export const authOptions = {
             throw new Error("Invalid credentials.");
           }
 
-          return user;  // Return user object if authorized
+          return user; // Return user object if authorized
         } catch (error) {
           console.error("Authorization Error: ", error);
           throw new Error("Authentication failed. Please try again.");
@@ -51,21 +51,21 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/",  // Redirect to this page for sign-in
+    signIn: "/", // Redirect to this page for sign-in
   },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user._id; 
+        token.id = user._id;
         token.email = user.email; // Attach user ID to token
       }
-      console.log("JWT Token:", token);  // Log token for debugging
+      // console.log("JWT Token:", token);  // Log token for debugging
       return token;
     },
     async session({ session, token }) {
-      session.user.id = token.id; 
+      session.user.id = token.id;
       session.user.email = token.email;
-      console.log("Session:", session);  // Log session for debugging
+      // console.log("Session:", session);  // Log session for debugging
       // Attach user ID to session
       return session;
     },

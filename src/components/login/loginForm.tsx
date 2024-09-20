@@ -4,7 +4,7 @@ import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import './loginForm.css';
+import styles from "../register/registerForm.module.css";
 
 export default function LoginForm() {
   const [email, setEmail] = useState<string>("");
@@ -52,13 +52,13 @@ export default function LoginForm() {
   }
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-      <div className="container">
-        <div className="heading">Sign In</div>
-        <form onSubmit={handleSubmit} className="form">
+    <div className={styles.containerWrap}>
+      <div className={styles.container}>
+        <div className={styles.heading}>Sign In</div>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <input
             required
-            className="input"
+            className={styles.input}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -68,7 +68,7 @@ export default function LoginForm() {
           />
           <input
             required
-            className="input"
+            className={styles.input}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
@@ -76,15 +76,15 @@ export default function LoginForm() {
             id="password"
             placeholder="Password"
           />
-          <input className="login-button" type="submit" value="Sign In" />
+          <input className={styles.loginButton} type="submit" value="Sign In" />
         </form>
-
-        {isLoading && <div className="loader">Signing in...</div>} {/* Loader */}
-
-        {error && <p className="error-message">{error}</p>} {/* Error message */}
-
-        <Link className="agreement" href="/register">
-          Don’t have an account? <span className="underline">Register</span>
+        {isLoading && <div className={styles.loader}>Signing in...</div>}{" "}
+        {/* Loader */}
+        {error && <p className={styles.errorMessage}>{error}</p>}{" "}
+        {/* Error message */}
+        <Link className={styles.agreement} href="/register">
+          Don’t have an account?{" "}
+          <span className={styles.underline}>Register</span>
         </Link>
       </div>
     </div>
