@@ -1,5 +1,6 @@
 "use client";
 import { useState,useEffect } from 'react';
+import SubmitButton from '@/components/buttons/submitbutton'
 
 import axios from 'axios';
 
@@ -51,6 +52,10 @@ const FormComponent = () => {
   };
 
   useEffect(() => {
+     const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      setFormData(JSON.parse(savedData));
+    }
     const fetchUniqueId = async () => {
       try {
         const response = await fetch("/api/uniqueNumber");
@@ -62,6 +67,11 @@ const FormComponent = () => {
     };
     fetchUniqueId();
   }, []);
+
+  useEffect(() => {
+    // Save form data to localStorage on every change
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -103,7 +113,7 @@ const FormComponent = () => {
             <div className='demurrage-section' >
               <h1 className='overAllFontSize'>SCHEDULE OF DEMURRAGE CHARGES  </h1>
               <hr className='overAllHr' />
-              <div className="demurrage-sec1" style={{ display: 'flex', margin: "1px" }}>
+              <div className="demurrage-sec1" style={{ display: 'flex', margin: "1px",alignItems:'center' }}>
                 <h1 className='overAllFontSize' >Demurrage chargeable agte</h1>
                 <input
                 name='demurrageChargeable'
@@ -112,9 +122,11 @@ const FormComponent = () => {
                   className='overAllInputBox'
                   required
                   type="text"
+                  autoComplete='off'
                 />
+               
               </div>
-              <div className="demurrage-sec2" style={{ display: 'flex', margin: "1px" }}>
+              <div className="demurrage-sec2" style={{ display: 'flex', margin: "1px",alignItems:'center' }}>
                 <h1 className='overAllFontSize'>days from today @Rs</h1>
                 <input
                   name='daysFromToday'
@@ -181,7 +193,8 @@ const FormComponent = () => {
                       name='date'
                       value={formData.date}
                       onChange={handleChange}
-                      style={{ height: '15px', width: '90px' }}
+                       className='overAllInputBox2'
+                      style={{ height: '1.5em', width: '80px' }}
                       required
                       type="text"
                     />
@@ -193,8 +206,9 @@ const FormComponent = () => {
                       name='amount'
                       value={formData.amount}
                       onChange={handleChange}
-                      style={{ height: '15px', width: '90px' }}
+                      style={{ height: '1.5em', width: '90px' }}
                       required
+                       className='overAllInputBox2'
                       type="text"
                     />
                   </h1>
@@ -202,8 +216,9 @@ const FormComponent = () => {
                     <input
                       name='risk'
                       value={formData.risk}
+                       className='overAllInputBox2'
                       onChange={handleChange}
-                      style={{ height: '15px', width: '90px' }}
+                      style={{ height: '1.5em', width: '80px' }}
                       required
                       type="text"
                     />
@@ -244,7 +259,8 @@ const FormComponent = () => {
                     name='uniqueNumber'
                     value={formData.uniqueNumber}
                     onChange={handleChange}
-                    style={{ height: '15px', width: '90px' }}
+                    className='overAllInputBox2'
+                    style={{ height: '1.5em', width: '90px' }}
                     required
                     type="text"
                     readOnly
@@ -253,9 +269,10 @@ const FormComponent = () => {
                 <h1 className='overAllFontSize' >Date.
                   <input
                     name='uniqueDate'
+                    className='overAllInputBox2'
                     value={formData.uniqueDate}
                     onChange={handleChange}
-                    style={{ height: '15px', width: '90px' }}
+                    style={{ height: '1.5em', width: '90px' }}
                     required
                     type="text"
                   />
@@ -427,6 +444,7 @@ const FormComponent = () => {
                 <input
                   name='ewayBillNo'
                   value={formData.ewayBillNo}
+                  className='overAllInputBox2'
                   onChange={handleChange}
                   style={{ height: '20px', width: '100px' }}
                   required
@@ -436,6 +454,7 @@ const FormComponent = () => {
               <h1 style={{ fontSize: '20px' }}>Valid Upto
               <input
                 name='validUpto'
+                className='overAllInputBox2'
                 value={formData.validUpto}
                 onChange={handleChange}
                   style={{ height: '20px', width: '130px' }}
@@ -516,6 +535,8 @@ const FormComponent = () => {
         name='value'
         value={formData.value}
         onChange={handleChange}
+        className='overAllInputBox2'
+
                   style={{ height: '20px', width: '100px' }}
                   required
                   type="text"
@@ -527,7 +548,7 @@ const FormComponent = () => {
       </div>
 
 <div> 
-  <button type='submit'>submit</button>
+ <SubmitButton />
 </div>
 </form>
       </div>

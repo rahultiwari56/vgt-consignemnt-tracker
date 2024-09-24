@@ -1,6 +1,6 @@
 // pages/api/save-transport-receipt.js
 import { NextResponse } from "next/server";
-import connectDB from "../lib/dbconnect"; // Ensure the path is correct
+import connectDB from "../../lib/mongodb"; // Ensure the path is correct
 import TransportReceipt from "@/models/formData"; // Import the model
 
 export async function POST(req) {

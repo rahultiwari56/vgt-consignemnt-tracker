@@ -1,0 +1,339 @@
+.coverDiv {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  width: 100%;
+  overflow: scroll;
+}
+.coverDiv::-webkit-scrollbar {
+  display: none;
+}
+.updateDivWrap {
+  display: flex;
+  margin-top: 90px;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.coverDiv::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(3px); /* Apply blur effect */
+  z-index: -1; /* Ensure it stays behind any content */
+}
+.btn {
+  width: max-content;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  height: max-content;
+}
+.receiptsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.expandedDetails {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding-bottom: 60px;
+  background-color: #0000004c;
+  align-items: center;
+  padding-top: 90px;
+  overflow: scroll;
+  margin-bottom: 90px;
+  justify-content: center;
+}
+.innerPopup {
+  position: relative;
+  width: 80%;
+  overflow-y: scroll;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px 20px;
+}
+.topDiv {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 00px;
+  /* margin: 30px;
+  margin-top: 20px;
+  border: 2px solid blue; */
+  border-radius: 10px;
+  font-size: 50px;
+}
+
+.nameContent {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.addContent {
+  font-size: 20px;
+}
+
+.placeOrder {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.placeOrderLeft {
+  width: 100%;
+  max-width: max(30%, 500px);
+}
+
+.placeOrderLeft .title {
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.placeOrderLeft input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  outline-color: tomato;
+}
+.placeOrderLeft .multiFields {
+  display: flex;
+  gap: 10px;
+}
+.expandedDetails .rapeFlex {
+  padding: 20px;
+  gap: 10px;
+}
+.rapeFlex {
+  display: flex;
+  flex-flow: column;
+  /* width: 100%; */
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+.formDataHandle {
+  display: grid;
+  width: 100%;
+  padding: 15px;
+  gap: 20px;
+  grid-template-columns: 70% 28%;
+}
+
+.formInnerDataHandler {
+  display: grid;
+  grid-template-columns: 35% 30.5% 30.5%;
+  gap: 20px;
+  padding: 5px;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.formSection1,
+.formSection2 {
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.demurrageSection,
+.insuranceSec1,
+.cautionSection,
+.insuranceFeilds {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.demurrageSec2,
+.demurrageSec1 {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  gap: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+.overAllFontSizeText {
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.overAllFontSize {
+  font-size: 12px;
+}
+.h1Inner {
+  font-size: 20px;
+}
+.overAllInputBox {
+  background: white;
+  border: none;
+
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+
+.overAllInputBox:hover,
+.overAllInputBox:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.overAllInputBox2 {
+  background: white;
+  border: none;
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+.overAllInputBox2:hover,
+.overAllInputBox2:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.overAllTextBox {
+  background: white;
+  border: none;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+.overAllTextBox:hover,
+.overAllTextBox:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.overAllTextBox2 {
+  background: white;
+  border: none;
+  height: 80px;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+.overAllTextBox2:hover,
+.overAllTextBox2:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.overAllTextBox3 {
+  background: white;
+  border: none;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+
+.overAllTextBox4 {
+  background: white;
+  border: none;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+.overAllTextBox4:hover,
+.overAllTextBox4:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.overAllTextBox5 {
+  background: white;
+  border: none;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+
+.overAllInputBox2 {
+  background: white;
+  border: none;
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+.overAllInputBox2:hover,
+.overAllInputBox2:focus {
+  outline: none;
+  border: 1px solid #fec887;
+}
+
+.tableContainer {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  margin-left: 0px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table thead tr {
+  height: 50px;
+}
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.panSection {
+  display: grid;
+  grid-template-columns: 20% 78%;
+  gap: 30px;
+}
+/* Hide the right border for data cells in Fields 1, 2, and 4 */
+.cautionSecWrap {
+  display: flex;
+  gap: 20px;
+}

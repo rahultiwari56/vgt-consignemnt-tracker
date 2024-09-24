@@ -1,15 +1,16 @@
-// src/page.js
-import Link from 'next/link';
+import LoginForm from "@/components/login/loginForm";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+
+  if (session) redirect("/login"); // Redirect to dashboard if already logged in
+
   return (
-    <div style={{display:'flex',flexDirection:'column',margin:"20px"}}>
-      <h1>Welcome to the Application</h1>
-      <Link href="/receipt-form">Go to Receipt Form</Link>
-      <Link href="/receiptsData">Go to saved Receipt</Link>
-      <Link href="/updateReceipt">Go to update Receipt</Link>
-
-
-    </div>
+    <main>
+      <LoginForm />
+    </main>
   );
 }
