@@ -1,12 +1,15 @@
 import LoginForm from "@/components/login/loginForm";
-import { getServerSession } from "next-auth";
+import { getSession } from "next-auth/react";
 import { redirect } from "next/navigation";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
+  // Use getSession for checking session on a page
+  const session = await getSession();
 
-  if (session) redirect("/login"); // Redirect to dashboard if already logged in
+  if (session) {
+    // If user is authenticated, redirect to dashboard
+    redirect("/dashboard");
+  }
 
   return (
     <main>

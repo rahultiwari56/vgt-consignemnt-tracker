@@ -1,0 +1,158 @@
+.popup {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  top: 0;
+}
+.topDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 00px;
+  /* margin: 30px;
+    margin-top: 20px;
+    border: 2px solid blue; */
+  border-radius: 10px;
+  font-size: 50px;
+}
+
+.nameContent {
+  font-size: 45px;
+  font-weight: 900;
+  text-align: center;
+}
+.addContent {
+  font-size: 18px;
+  text-align: center;
+}
+.wrap {
+  display: grid;
+  grid-template-columns: 79% 20%;
+  padding: 10px;
+}
+.rapeFlex {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+}
+.demurrageSection {
+  overflow: hidden;
+  border: 3px solid #000;
+  border-radius: 4px;
+}
+.overAllFontSize {
+  font-size: 19px;
+}
+.overAllHr {
+  height: 2px;
+  background-color: #000;
+  border: 0;
+}
+.formInnerDataHandler {
+  display: grid;
+  grid-template-columns: 30% 34% 32%;
+  gap: 20px;
+}
+.formSection1,
+.formSection2 {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.demurrageSec1 {
+  display: flex;
+  gap: 10px;
+}
+.overAllFontSizeInner {
+  font-size: 13px;
+}
+.overAllInputBox {
+  border: 0;
+  border-bottom: 2px dotted #000;
+  outline: 0;
+}
+.noteSection {
+  display: flex;
+  flex-flow: column;
+  border: 3px solid #000;
+  border-radius: 4px;
+}
+.overAllFontSizeText {
+  text-align: center;
+}
+.overAllFontSizeText span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.sideInputWrap {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+}
+.sideInputWrap p {
+  font-weight: 600;
+  width: max-content;
+}
+.insuranceSec1 {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.verticalWrap {
+  display: flex;
+  flex-flow: column;
+}
+.h1Inner {
+  font-size: 18px;
+}
+.overAllTextArea {
+  border: 0;
+  width: 80%;
+  border-bottom: 2px solid #000;
+}
+.cosinSecDiv {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.overAllTextBox4 {
+  border: 3px solid #000;
+  border-radius: 4px;
+}
+.tableContainer {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  margin-left: 0px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table thead tr {
+  height: 50px;
+}
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.overAllTextBox3 {
+  border: 0;
+}
