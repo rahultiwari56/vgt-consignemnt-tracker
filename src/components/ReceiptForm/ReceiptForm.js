@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import SubmitButton from "@/components/buttons/submitbutton";
+import SubmitButton from "@/components/buttons/SubmitButton";
 import axios from "axios";
 import styles from "./receiptForm.module.css";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 const ReceiptForm = () => {
