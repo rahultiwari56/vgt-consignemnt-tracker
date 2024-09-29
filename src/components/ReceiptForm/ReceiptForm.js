@@ -707,7 +707,7 @@ const ReceiptForm = () => {
           </div>
 
           <div>
-            <SubmitButton />
+            <Submitbutton />
           </div>
         </form>
       </div>
