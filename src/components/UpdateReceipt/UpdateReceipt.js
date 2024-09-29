@@ -5,7 +5,7 @@ import Loader from "@/components/loader/loader";
 import styles from "../ReceiptForm/receiptForm.module.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Submitbutton from "../buttons/Demo";
+import Submitbutton from "../buttons/SubmitButton";
 
 const UpdateReceipt = () => {
   const [receipts, setReceipts] = useState([]);
