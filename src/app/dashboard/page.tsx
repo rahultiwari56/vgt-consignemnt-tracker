@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import styles from "./dashboard.module.css";
 import Loader from "@/components/loader/loader";
 import ReceiptForm from "../../components/ReceiptForm/ReceiptForm";
-import DashboardLook from "@/components/dashboardLook/dashboardLook";
 import UpdateReceipt from "../../components/UpdateReceipt/UpdateReceipt";
 import ViewReceiptsCom from "../../components/ViewReceipt/ViewReceipt";
 
