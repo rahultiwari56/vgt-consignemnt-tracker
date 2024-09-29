@@ -12,7 +12,6 @@ const UpdateReceipt = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isEditing, setIsEditing] = useState(null);
-  const [updatedReceipt, setUpdatedReceipt] = useState({});
   const [expandedReceipt, setExpandedReceipt] = useState(null); // Track expanded receipts
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
